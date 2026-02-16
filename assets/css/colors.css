@@ -1,0 +1,68 @@
+/* Billion Blocks – Design tokens (from Figma). Default = dark theme. */
+
+:root,
+html[data-theme='dark'] {
+  /* Neutral */
+  --bb-neutral-soft: #142029;
+  --bb-neutral-light: #1a2935;
+  --bb-neutral-base: #2c4860;
+  --bb-neutral-medium: #a9bcce;
+  --bb-neutral-strong: #f5f7fc;
+  --bb-neutral-default: #101920;
+  --bb-background-default: #101920;
+  --bb-text-color-primary: #f5f7fc;
+
+  /* Primary */
+  --bb-primary-soft: #9d2a2a;
+  --bb-primary-base: #fd4444;
+  --bb-primary-medium: #fea1a1;
+  --bb-primary-strong: #ffd5d5;
+  --bb-primary-default: #fd5757;
+  --bb-primary-contrast: #fff5f5;
+
+  /* Success */
+  --bb-success-light: #013326;
+  --bb-success-default: #00d689;
+  --bb-success-strong: #ccffed;
+  --bb-success-medium: #00a66a;
+
+  /* Info */
+  --bb-info-strong: #d8edfd;
+  --bb-info-default: #0088f0;
+  --bb-info-light: #0d5e9b;
+  --bb-info-medium: #a3d7ff;
+
+  /* Warning */
+  --bb-warning-light: #393013;
+  --bb-warning-default: #fe9a00;
+  --bb-warning-strong: #fde5c4;
+  --bb-warning-medium: #fac780;
+
+  /* Error */
+  --bb-error-strong: #fea1a1;
+  --bb-error-default: #d51b1b;
+  --bb-error-light: #6f1010;
+  --bb-error-medium: #ca363f;
+
+  /* Disable */
+  --bb-disable-color-base: #142029;
+  --bb-disable-color-base-contrast: #395d7c;
+
+  /* Black & White */
+  --bb-black-color: #000000;
+  --bb-white-color: #ffffff;
+
+  --bb-text-color-on-contrast-base: #101920;
+}
+
+/* Light theme (toggle in layout) */
+html[data-theme='light'] {
+  --bb-background-default: #ffffff;
+  --bb-neutral-soft: #ffffff;
+  --bb-neutral-light: #f6f7f9;
+  --bb-neutral-base: #e5e9ee;
+  --bb-neutral-medium: #b9c0c9;
+  --bb-neutral-strong: #697480;
+  --bb-neutral-default: #333c45;
+  --bb-text-color-primary: #1a2935;
+}

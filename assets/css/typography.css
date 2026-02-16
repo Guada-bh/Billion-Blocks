@@ -1,0 +1,104 @@
+/* Billion Blocks – Typography tokens (from Figma) */
+
+:root {
+  --bb-font-family-default: 'Satoshi', 'Satoshi Variable', system-ui, sans-serif;
+
+  /* Headings (px) */
+  --bb-heading-md: 28px;
+  --bb-heading-xs: 20px;
+
+  /* Paragraph */
+  --bb-p-xl: 18px;
+  --bb-p-md: 14px;
+
+  /* Line heights */
+  --bb-xl-line-height: 40px;
+  --bb-sm-line-height: 24px;
+  --bb-xs-line-height: 20px;
+
+  /* Mobile typography scale */
+  --bb-mobile-heading-lg: 28px;
+  --bb-mobile-heading-sm: 20px;
+  --bb-mobile-body-md: 14px;
+  --bb-mobile-body-sm: 12px;
+
+  /* Desktop typography scale */
+  --bb-desktop-heading-lg: 28px;
+  --bb-desktop-heading-md: 24px;
+  --bb-desktop-heading-sm: 20px;
+  --bb-desktop-body-lg: 18px;
+  --bb-desktop-body-md: 14px;
+}
+
+body {
+  font-family: var(--bb-font-family-default);
+  color: var(--bb-text-color-primary);
+  background-color: var(--bb-background-default);
+}
+
+/* Utility classes for type scale */
+.bb-heading-md {
+  font-size: var(--bb-heading-md);
+  line-height: var(--bb-xl-line-height);
+  font-weight: 500;
+}
+
+.bb-heading-xs {
+  font-size: var(--bb-heading-xs);
+  line-height: var(--bb-sm-line-height);
+  font-weight: 500;
+}
+
+.bb-p-xl {
+  font-size: var(--bb-p-xl);
+  line-height: var(--bb-xs-line-height);
+  font-weight: 400;
+}
+
+.bb-p-md {
+  font-size: var(--bb-p-md);
+  line-height: var(--bb-sm-line-height);
+  font-weight: 400;
+}
+
+.bb-mobile-heading-lg-bold {
+  font-size: var(--bb-mobile-heading-lg);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.bb-mobile-heading-sm-medium {
+  font-size: var(--bb-mobile-heading-sm);
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.bb-mobile-body-md-regular {
+  font-size: var(--bb-mobile-body-md);
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.bb-desktop-heading-lg-bold {
+  font-size: var(--bb-desktop-heading-lg);
+  line-height: var(--bb-xl-line-height);
+  font-weight: 700;
+}
+
+.bb-desktop-heading-md-medium {
+  font-size: var(--bb-desktop-heading-md);
+  line-height: var(--bb-sm-line-height);
+  font-weight: 500;
+}
+
+.bb-desktop-body-lg-regular {
+  font-size: var(--bb-desktop-body-lg);
+  line-height: var(--bb-xs-line-height);
+  font-weight: 400;
+}
+
+.bb-desktop-body-md-regular {
+  font-size: var(--bb-desktop-body-md);
+  line-height: var(--bb-sm-line-height);
+  font-weight: 400;
+}

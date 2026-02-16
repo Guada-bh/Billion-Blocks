@@ -1,0 +1,27 @@
+/* Billion Blocks – Button tokens */
+
+:root {
+  --bb-button-primary-bg: var(--bb-primary-base);
+  --bb-button-primary-bg-hover: var(--bb-primary-soft);
+  --bb-button-primary-font-color: var(--bb-white-color);
+  --bb-button-primary-icon-color: var(--bb-white-color);
+  --bb-button-secondary-bg: transparent;
+  --bb-button-secondary-border: var(--bb-neutral-strong);
+  --bb-button-secondary-font-color: var(--bb-neutral-strong);
+  --bb-button-secondary-icon-color: var(--bb-neutral-strong);
+  --bb-button-gap: 8px;
+  --bb-button-gap-sm: 4px;
+  --bb-button-font-size: 16px;
+  --bb-button-font-size-sm: 14px;
+  --bb-button-font-weight: 500;
+  --bb-button-font-family: var(--bb-font-family-default);
+  --bb-icon-size-md: 24px;
+  --bb-icon-size-sm: 16px;
+  --bb-button-disabled-bg: var(--bb-disable-color-base);
+  --bb-button-disabled-font: var(--bb-disable-color-base-contrast);
+  --bb-button-border-radius: 8px;
+  --bb-button-padding-x: 24px;
+  --bb-button-padding-y: 12px;
+  --bb-button-padding-sm-x: 16px;
+  --bb-button-padding-sm-y: 8px;
+}
