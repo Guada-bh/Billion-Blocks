@@ -1,0 +1,14 @@
+/* Billion Blocks – Spacing scale (design tokens) */
+
+:root {
+  --bb-space-4: 4px;
+  --bb-space-8: 8px;
+  --bb-space-12: 12px;
+  --bb-space-16: 16px;
+  --bb-space-24: 24px;
+  --bb-space-32: 32px;
+  --bb-space-40: 40px;
+  --bb-space-48: 48px;
+  --bb-space-64: 64px;
+  --bb-space-80: 80px;
+}

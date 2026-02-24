@@ -148,27 +148,28 @@
   background: var(--bb-neutral-soft);
   padding: 2px 6px;
   border-radius: 4px;
-  color: var(--bb-info-default);
+  color: var(--bb-neutral-strong);
 }
 
 .button-showcase-grid {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: var(--bb-space-32);
 }
 
 .button-showcase-group-label {
   font-size: 12px;
   font-weight: 500;
   color: var(--bb-neutral-medium);
-  margin: 0 0 8px 0;
+  margin: 0 0 var(--bb-space-12) 0;
 }
 
 .button-showcase-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: var(--bb-space-24);
   align-items: center;
+  margin-bottom: var(--bb-space-16);
 }
 
 .button-showcase-focus-text {

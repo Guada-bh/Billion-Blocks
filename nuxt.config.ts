@@ -17,7 +17,9 @@ export default defineNuxtConfig({
   css: [
     '~/assets/css/colors.css',
     '~/assets/css/typography.css',
-    '~/assets/css/buttons.css'
+    '~/assets/css/buttons.css',
+    '~/assets/css/spacing.css',
+    '~/assets/css/doc.css'
   ],
   compatibilityDate: '2024-11-01',
 
