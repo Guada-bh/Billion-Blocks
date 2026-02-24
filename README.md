@@ -48,3 +48,4 @@ El proyecto ya tiene `nitro.preset: 'vercel'` en `nuxt.config.ts` para un despli
 - `components/ds/` – Componentes del sistema de diseño
 - `layouts/default.vue` – Header con navegación y toggle de tema
 - `pages/index.vue` – Página principal con las cuatro secciones
+# Billion-Blocks
