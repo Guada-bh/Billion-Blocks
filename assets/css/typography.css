@@ -9,7 +9,7 @@
 
   /* Paragraph */
   --bb-p-xl: 18px;
-  --bb-p-md: 14px;
+  --bb-p-md: 16px;
 
   /* Line heights */
   --bb-xl-line-height: 40px;
@@ -19,7 +19,7 @@
   /* Mobile typography scale */
   --bb-mobile-heading-lg: 28px;
   --bb-mobile-heading-sm: 20px;
-  --bb-mobile-body-md: 14px;
+  --bb-mobile-body-md: 16px;
   --bb-mobile-body-sm: 12px;
 
   /* Desktop typography scale */
@@ -27,13 +27,14 @@
   --bb-desktop-heading-md: 24px;
   --bb-desktop-heading-sm: 20px;
   --bb-desktop-body-lg: 18px;
-  --bb-desktop-body-md: 14px;
+  --bb-desktop-body-md: 16px;
 }
 
 body {
   font-family: var(--bb-font-family-default);
   color: var(--bb-text-color-primary);
   background-color: var(--bb-background-default);
+  margin: 0;
 }
 
 /* Utility classes for type scale */

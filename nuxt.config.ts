@@ -9,9 +9,7 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'description', content: 'Sistema de diseño Billion Blocks para Billionhands' }
       ],
-      link: [
-        { rel: 'stylesheet', href: 'https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap' }
-      ]
+      link: [{ rel: 'stylesheet', href: 'https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap' }]
     }
   },
   css: [

@@ -1,14 +1,16 @@
 <template>
   <div class="icon-showcase">
-    <p class="icon-showcase-intro">
-      Muestra representativa de la biblioteca de iconos. Estilo monocromático, <code>currentColor</code>, tamaño 24px.
+    <p class="icon-showcase-intro text-secondary">
+      Muestra representativa de la biblioteca de iconos. Estilo monocromático,
+      <code>currentColor</code>
+      , tamaño 24px.
     </p>
     <div class="icon-showcase-grid">
       <div v-for="item in iconList" :key="item.name" class="icon-showcase-cell">
         <div class="icon-showcase-preview">
           <component :is="item.component" />
         </div>
-        <span class="icon-showcase-name">{{ item.name }}</span>
+        <span class="icon-showcase-name text-secondary">{{ item.name }}</span>
       </div>
     </div>
   </div>
@@ -65,7 +67,6 @@ const iconList = [
 
 .icon-showcase-intro {
   font-size: 14px;
-  color: var(--bb-neutral-medium);
   margin-bottom: 24px;
   line-height: 1.5;
 }
@@ -110,7 +111,6 @@ const iconList = [
 
 .icon-showcase-name {
   font-size: 11px;
-  color: var(--bb-neutral-medium);
   text-align: center;
 }
 </style>

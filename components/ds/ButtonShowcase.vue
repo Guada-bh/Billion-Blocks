@@ -3,11 +3,20 @@
     <div class="button-showcase-section">
       <h4 class="button-showcase-heading">Guías de tipografía</h4>
       <ul class="button-showcase-list">
-        <li>Los botones usan una tipografía mínima de <strong>16px</strong> para legibilidad y accesibilidad (WCAG).</li>
-        <li>Los botones secundarios pueden usar contraste AAA y reducir a <strong>14px</strong> (variante SM).</li>
+        <li>
+          Los botones usan una tipografía mínima de
+          <strong>16px</strong>
+          para legibilidad y accesibilidad (WCAG).
+        </li>
+        <li>
+          Los botones secundarios pueden usar contraste AAA y reducir a
+          <strong>14px</strong>
+          (variante SM).
+        </li>
         <li class="button-showcase-warning">
           <span class="button-showcase-warning-icon" aria-hidden="true">⚠</span>
-          La variante SM (14px) solo debe usarse en botones secundarios o contextuales con contraste AAA. No usar en primarios ni sobre fondos de bajo contraste.
+          La variante SM (14px) solo debe usarse en botones secundarios o contextuales con contraste AAA. No usar en
+          primarios ni sobre fondos de bajo contraste.
         </li>
       </ul>
     </div>
@@ -21,11 +30,14 @@
         </div>
         <div class="button-showcase-prop">
           <span class="button-showcase-prop-label">Text</span>
-          <code>SM / 14px</code> + <code>--bb-button-primary-font-color</code>
+          <code>SM / 14px</code>
+          +
+          <code>--bb-button-primary-font-color</code>
         </div>
         <div class="button-showcase-prop">
           <span class="button-showcase-prop-label">Icon</span>
-          <code>--bb-button-primary-icon-color</code>, size 16px (SM) / 24px (MD)
+          <code>--bb-button-primary-icon-color</code>
+          , size 16px (SM) / 24px (MD)
         </div>
       </div>
     </div>
@@ -34,7 +46,7 @@
       <h4 class="button-showcase-heading">Variantes</h4>
       <div class="button-showcase-grid">
         <div class="button-showcase-group">
-          <p class="button-showcase-group-label">Primary</p>
+          <p class="button-showcase-group-label text-secondary">Primary</p>
           <div class="button-showcase-row">
             <DsButton variant="primary">Regístrate</DsButton>
             <DsButton variant="primary" disabled>Regístrate</DsButton>
@@ -51,7 +63,7 @@
           </div>
         </div>
         <div class="button-showcase-group">
-          <p class="button-showcase-group-label">Secondary / Outline</p>
+          <p class="button-showcase-group-label text-secondary">Secondary / Outline</p>
           <div class="button-showcase-row">
             <DsButton variant="secondary">Regístrate</DsButton>
             <DsButton variant="outline">Regístrate</DsButton>
@@ -61,7 +73,7 @@
           </div>
         </div>
         <div class="button-showcase-group">
-          <p class="button-showcase-group-label">Solo icono</p>
+          <p class="button-showcase-group-label text-secondary">Solo icono</p>
           <div class="button-showcase-row">
             <DsButton variant="primary" icon-only>
               <template #iconLeft><DsIconsIconSearch /></template>
@@ -79,7 +91,11 @@
 
     <div class="button-showcase-section button-showcase-focus">
       <h4 class="button-showcase-heading">Estado de foco (accesibilidad)</h4>
-      <p class="button-showcase-focus-text">Para ver el estado de foco, usa la tecla <kbd>Tab</kbd>. Así navegan los lectores de pantalla.</p>
+      <p class="button-showcase-focus-text">
+        Para ver el estado de foco, usa la tecla
+        <kbd>Tab</kbd>
+        . Así navegan los lectores de pantalla.
+      </p>
       <div class="button-showcase-row">
         <DsButton variant="primary" class="button-showcase-focus-demo">Regístrate</DsButton>
         <DsButton variant="primary">Regístrate</DsButton>
@@ -160,7 +176,6 @@
 .button-showcase-group-label {
   font-size: 12px;
   font-weight: 500;
-  color: var(--bb-neutral-medium);
   margin: 0 0 var(--bb-space-12) 0;
 }
 
@@ -187,6 +202,8 @@
 }
 
 .button-showcase-focus-demo:focus-visible {
-  box-shadow: 0 0 0 2px var(--bb-background-default), 0 0 0 4px var(--bb-info-default);
+  box-shadow:
+    0 0 0 2px var(--bb-background-default),
+    0 0 0 4px var(--bb-info-default);
 }
 </style>

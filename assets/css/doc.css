@@ -1,11 +1,20 @@
 /* Billion Blocks – Doc site styles (usa solo tokens del DS) */
 
+.text-secondary {
+  color: var(--bb-neutral-medium);
+}
+
 .ds-page {
   font-family: var(--bb-font-family-default);
+  max-width: 80%;
 }
 
 .ds-hero {
   margin-bottom: var(--bb-space-48);
+}
+
+.ds-hero .ds-body {
+  max-width: 60ch;
 }
 
 .ds-title {
@@ -18,13 +27,11 @@
 .ds-lead {
   font-size: var(--bb-p-xl);
   line-height: 1.4;
-  color: var(--bb-neutral-medium);
   margin: 0 0 var(--bb-space-24) 0;
 }
 
 .ds-version {
   font-size: 14px;
-  color: var(--bb-neutral-medium);
   margin: 0;
 }
 
@@ -53,16 +60,284 @@
 .ds-body {
   font-size: var(--bb-p-md);
   line-height: var(--bb-sm-line-height);
+}
+
+.ds-list {
+  margin: 0 0 var(--bb-space-24) 0;
+  padding-left: var(--bb-space-24);
+  list-style: disc;
+}
+
+.ds-list li {
+  font-size: var(--bb-p-md);
+  line-height: 1.5;
   color: var(--bb-text-color-primary);
-  margin: 0 0 var(--bb-space-16) 0;
+  margin-bottom: var(--bb-space-12);
+}
+
+.ds-list li:last-child {
+  margin-bottom: 0;
+}
+
+.ds-list strong {
+  font-weight: 600;
+  color: var(--bb-neutral-strong);
+}
+
+.ds-list--checklist {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.ds-list--checklist li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: var(--bb-space-12);
+}
+
+.ds-list--checklist li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--bb-success-default);
+  line-height: 1.5;
+}
+
+.ds-card--highlight {
+  max-width: 480px;
+  background: linear-gradient(135deg,
+      var(--bb-neutral-light) 0%,
+      var(--bb-primary-soft) 40%,
+      var(--bb-info-light) 100%);
+  border-color: var(--bb-neutral-base);
+  cursor: default;
+}
+
+.ds-card--highlight::before {
+  height: 4px;
+  background: linear-gradient(90deg, var(--bb-primary-default), var(--bb-success-default), var(--bb-info-default));
+  opacity: 1;
+}
+
+.ds-card--highlight:hover {
+  transform: none;
+  box-shadow: 0 4px 20px var(--bb-neutral-default);
+}
+
+.ds-card--highlight .ds-section-subtitle {
+  color: var(--bb-text-color-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--bb-space-12);
+}
+
+.ds-card--highlight .ds-card-icon {
+  margin-bottom: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--bb-success-default);
+}
+
+.ds-card--highlight .ds-card-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.ds-card--highlight .ds-list--checklist li {
+  color: var(--bb-neutral-strong);
+}
+
+.ds-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--bb-space-24);
 }
 
 .ds-card {
+  display: flex;
+  flex-direction: column;
   background: var(--bb-neutral-light);
   border: 1px solid var(--bb-neutral-base);
   border-radius: var(--bb-button-border-radius);
   padding: var(--bb-space-24);
+  margin-bottom: 0;
+  text-decoration: none;
+  color: inherit;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    border-color 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.ds-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--bb-neutral-base);
+  opacity: 0.6;
+}
+
+.ds-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--bb-neutral-default);
+  border-color: var(--bb-neutral-medium);
+}
+
+.ds-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
   margin-bottom: var(--bb-space-16);
+  color: var(--bb-neutral-strong);
+}
+
+.ds-card-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.ds-card:hover .ds-card-icon {
+  color: var(--bb-white-color);
+}
+
+.ds-card .ds-section-subtitle {
+  margin: 0 0 var(--bb-space-8) 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.ds-card .ds-body {
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.ds-card--foundations::before,
+.ds-card--highlight::before {
+  background: linear-gradient(90deg, var(--bb-primary-default), var(--bb-info-default));
+}
+
+.ds-card--tokens::before {
+  background: linear-gradient(90deg, var(--bb-success-default), var(--bb-info-default));
+}
+
+.ds-card--components::before {
+  background: linear-gradient(90deg, var(--bb-warning-default), var(--bb-primary-default));
+}
+
+.ds-card--storybook::before {
+  background: linear-gradient(90deg, var(--bb-info-default), var(--bb-neutral-medium));
+}
+
+.ds-card--changelog::before {
+  background: linear-gradient(90deg, var(--bb-neutral-medium), var(--bb-success-default));
+}
+
+/* Cómo está organizada la documentación – 3 cards con patrón e icono */
+.ds-doc-structure-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--bb-space-24);
+}
+
+@media (min-width: 640px) {
+  .ds-doc-structure-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.ds-doc-structure-card {
+  position: relative;
+  padding: var(--bb-space-24);
+  background: color-mix(in srgb, var(--bb-neutral-light) 50%, transparent);
+  border: 1px solid var(--bb-neutral-base);
+  border-radius: var(--bb-button-border-radius);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.ds-doc-structure-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px var(--bb-neutral-default);
+  border-color: var(--bb-neutral-medium);
+}
+
+.ds-doc-structure-card-pattern {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 140px;
+  height: 140px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.ds-doc-structure-card-pattern svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ds-doc-structure-card--foundations .ds-doc-structure-card-pattern {
+  color: var(--bb-primary-default);
+}
+
+.ds-doc-structure-card--tokens .ds-doc-structure-card-pattern {
+  color: var(--bb-success-default);
+}
+
+.ds-doc-structure-card--patterns .ds-doc-structure-card-pattern {
+  color: var(--bb-info-default);
+}
+
+.ds-doc-structure-card-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--bb-space-16);
+  border-radius: 12px;
+  z-index: 1;
+
+}
+
+
+.ds-doc-structure-card-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.ds-doc-structure-card-icon {
+  background: var(--bb-neutral-light);
+  color: var(--bb-primary-contrast);
+}
+
+.ds-doc-structure-card .ds-section-subtitle {
+  position: relative;
+  margin: 0 0 var(--bb-space-12) 0;
+  padding-bottom: 0;
+  border-bottom: none;
+  z-index: 1;
+}
+
+.ds-doc-structure-card .ds-body {
+  position: relative;
+  font-size: var(--bb-p-md);
+  line-height: 1.5;
+  margin: 0;
+  z-index: 1;
 }
 
 .ds-status-badge {
@@ -89,7 +364,7 @@
 }
 
 .ds-link-external {
-  color: var(--bb-neutral-strong);
+  color: var(--bb-info-medium);
   font-weight: 500;
   text-decoration: none;
 }

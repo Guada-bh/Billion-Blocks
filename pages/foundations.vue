@@ -2,22 +2,23 @@
   <div class="ds-page">
     <div class="ds-hero">
       <h1 class="ds-title">Foundations</h1>
-      <p class="ds-lead">
+      <p class="ds-lead text-secondary">
         Fundamentos visuales del design system: color, tipografía, espaciado, iconografía y bases de accesibilidad.
       </p>
     </div>
 
     <section id="color" class="ds-section">
       <h2 class="ds-section-title">Color</h2>
-      <p class="ds-body">
-        Paleta semántica (primary, neutral, success, info, warning, error) y colores de superficie y texto. Todos los valores se consumen vía CSS variables.
+      <p class="ds-body text-secondary">
+        Paleta semántica (primary, neutral, success, info, warning, error) y colores de superficie y texto. Todos los
+        valores se consumen vía CSS variables.
       </p>
       <DsColorPalette />
     </section>
 
     <section id="type" class="ds-section">
       <h2 class="ds-section-title">Type</h2>
-      <p class="ds-body">
+      <p class="ds-body text-secondary">
         Fuente: Satoshi. Escalas para mobile y desktop (heading, body) y line-heights definidos en tokens.
       </p>
       <DsTypeScale />
@@ -25,12 +26,12 @@
 
     <section id="spacing" class="ds-section">
       <h2 class="ds-section-title">Spacing</h2>
-      <p class="ds-body">
+      <p class="ds-body text-secondary">
         Escala de espaciado (4, 8, 12, 16, 24, 32, 40, 48, 64, 80px). Usar para márgenes, paddings y gaps.
       </p>
       <div class="ds-spacing-demo">
         <div v-for="token in spacingTokens" :key="token.name" class="ds-spacing-row">
-          <span class="ds-spacing-name">{{ token.name }}</span>
+          <span class="ds-spacing-name text-secondary">{{ token.name }}</span>
           <span class="ds-spacing-value">{{ token.value }}</span>
           <div class="ds-spacing-bar" :style="{ width: token.value }" />
         </div>
@@ -39,29 +40,49 @@
 
     <section id="iconography" class="ds-section">
       <h2 class="ds-section-title">Iconography</h2>
-      <p class="ds-body">
-        Set de iconos del sistema. Tamaños: <code>--bb-icon-size-sm</code> (16px), <code>--bb-icon-size-md</code> (24px).
+      <p class="ds-body text-secondary">
+        Set de iconos del sistema. Tamaños:
+        <code>--bb-icon-size-sm</code>
+        (16px),
+        <code>--bb-icon-size-md</code>
+        (24px).
       </p>
       <DsIconShowcase />
     </section>
 
     <section id="accessibility" class="ds-section">
       <h2 class="ds-section-title">Accessibility basics</h2>
-      <p class="ds-body">
-        Principios que seguimos para cumplir con WCAG y buena UX:
-      </p>
+      <p class="ds-body text-secondary">Principios que seguimos para cumplir con WCAG y buena UX:</p>
       <ul class="ds-list">
-        <li><strong>Contraste</strong> — Texto y fondos usan combinaciones que cumplen ratio mínimo (4.5:1 texto normal, 3:1 texto grande).</li>
-        <li><strong>Foco visible</strong> — Los controles interactivos tienen estado de foco claramente visible (outline/focus ring).</li>
-        <li><strong>Teclado</strong> — Toda la funcionalidad accesible por teclado; orden de tabulación lógico.</li>
-        <li><strong>Motion</strong> — Respetar <code>prefers-reduced-motion</code> para animaciones (reducir o desactivar cuando el usuario lo indique).</li>
-        <li><strong>Semántica</strong> — Uso correcto de headings (h1–h6), landmarks y roles ARIA cuando haga falta.</li>
+        <li>
+          <strong>Contraste</strong>
+          — Texto y fondos usan combinaciones que cumplen ratio mínimo (4.5:1 texto normal, 3:1 texto grande).
+        </li>
+        <li>
+          <strong>Foco visible</strong>
+          — Los controles interactivos tienen estado de foco claramente visible (outline/focus ring).
+        </li>
+        <li>
+          <strong>Teclado</strong>
+          — Toda la funcionalidad accesible por teclado; orden de tabulación lógico.
+        </li>
+        <li>
+          <strong>Motion</strong>
+          — Respetar
+          <code>prefers-reduced-motion</code>
+          para animaciones (reducir o desactivar cuando el usuario lo indique).
+        </li>
+        <li>
+          <strong>Semántica</strong>
+          — Uso correcto de headings (h1–h6), landmarks y roles ARIA cuando haga falta.
+        </li>
       </ul>
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
+definePageMeta({ layout: 'doc' })
 const spacingTokens = [
   { name: '--bb-space-4', value: '4px' },
   { name: '--bb-space-8', value: '8px' },
@@ -93,7 +114,6 @@ const spacingTokens = [
 .ds-spacing-name {
   min-width: 140px;
   font-family: monospace;
-  color: var(--bb-neutral-medium);
 }
 
 .ds-spacing-value {

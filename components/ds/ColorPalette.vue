@@ -1,6 +1,6 @@
 <template>
   <div class="color-palette">
-    <p class="color-palette-intro">
+    <p class="color-palette-intro text-secondary">
       Paleta del sistema por categorías. Primary medium puede tener problemas de contraste en ciertos fondos.
       <a href="#" class="color-palette-link">Ver pruebas de accesibilidad</a>
     </p>
@@ -14,13 +14,10 @@
             class="color-swatch"
             :class="{ 'color-swatch--warning': token.warning }"
           >
-            <div
-              class="color-swatch-preview"
-              :style="{ backgroundColor: token.hex }"
-            />
+            <div class="color-swatch-preview" :style="{ backgroundColor: token.hex }" />
             <div class="color-swatch-info">
               <span class="color-swatch-name">{{ token.name }}</span>
-              <code class="color-swatch-hex">{{ token.hex }}</code>
+              <code class="color-swatch-hex text-secondary">{{ token.hex }}</code>
             </div>
           </div>
         </div>
@@ -113,7 +110,6 @@ const colorGroups = [
 
 .color-palette-intro {
   font-size: 14px;
-  color: var(--bb-neutral-medium);
   margin-bottom: 24px;
   line-height: 1.5;
 }
@@ -170,7 +166,6 @@ const colorGroups = [
 
 .color-swatch-hex {
   font-size: 11px;
-  color: var(--bb-neutral-medium);
   font-family: ui-monospace, monospace;
 }
 </style>
