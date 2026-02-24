@@ -1,0 +1,101 @@
+/* Billion Blocks – Doc site styles (usa solo tokens del DS) */
+
+.ds-page {
+  font-family: var(--bb-font-family-default);
+}
+
+.ds-hero {
+  margin-bottom: var(--bb-space-48);
+}
+
+.ds-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--bb-text-color-primary);
+  margin: 0 0 var(--bb-space-4) 0;
+}
+
+.ds-lead {
+  font-size: var(--bb-p-xl);
+  line-height: 1.4;
+  color: var(--bb-neutral-medium);
+  margin: 0 0 var(--bb-space-24) 0;
+}
+
+.ds-version {
+  font-size: 14px;
+  color: var(--bb-neutral-medium);
+  margin: 0;
+}
+
+.ds-section {
+  margin-bottom: var(--bb-space-64);
+  scroll-margin-top: 80px;
+}
+
+.ds-section-title {
+  font-size: var(--bb-heading-md);
+  font-weight: 500;
+  line-height: var(--bb-xl-line-height);
+  color: var(--bb-text-color-primary);
+  margin: 0 0 var(--bb-space-24) 0;
+  padding-bottom: var(--bb-space-8);
+  border-bottom: 1px solid var(--bb-neutral-base);
+}
+
+.ds-section-subtitle {
+  font-size: var(--bb-heading-xs);
+  font-weight: 500;
+  color: var(--bb-text-color-primary);
+  margin: 0 0 var(--bb-space-16) 0;
+}
+
+.ds-body {
+  font-size: var(--bb-p-md);
+  line-height: var(--bb-sm-line-height);
+  color: var(--bb-text-color-primary);
+  margin: 0 0 var(--bb-space-16) 0;
+}
+
+.ds-card {
+  background: var(--bb-neutral-light);
+  border: 1px solid var(--bb-neutral-base);
+  border-radius: var(--bb-button-border-radius);
+  padding: var(--bb-space-24);
+  margin-bottom: var(--bb-space-16);
+}
+
+.ds-status-badge {
+  display: inline-block;
+  padding: var(--bb-space-4) var(--bb-space-12);
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+.ds-status-badge--stable {
+  background: var(--bb-success-light);
+  color: var(--bb-success-default);
+}
+
+.ds-status-badge--draft {
+  background: var(--bb-warning-light);
+  color: var(--bb-warning-default);
+}
+
+.ds-status-badge--review {
+  background: var(--bb-info-light);
+  color: var(--bb-info-medium);
+}
+
+.ds-link-external {
+  color: var(--bb-neutral-strong);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.ds-link-external:hover {
+  text-decoration: underline;
+  font-weight: 600;
+  color: var(--bb-white-color);
+}
