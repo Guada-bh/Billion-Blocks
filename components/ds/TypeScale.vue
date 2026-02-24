@@ -3,16 +3,16 @@
     <div class="type-hero">
       <h3 class="type-font-name">Satoshi variable</h3>
       <p class="type-sample-lg">Ag</p>
-      <p class="type-alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
-      <p class="type-alphabet">abcdefghijklmnopqrstuvwxyz</p>
-      <p class="type-alphabet">0123456789!@#$%^&*()</p>
+      <p class="type-alphabet text-secondary">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+      <p class="type-alphabet text-secondary">abcdefghijklmnopqrstuvwxyz</p>
+      <p class="type-alphabet text-secondary">0123456789!@#$%^&*()</p>
     </div>
 
     <div class="type-block">
       <h4 class="type-block-title">Mobile</h4>
       <div class="type-variants type-variants--mobile">
         <div v-for="v in mobileVariants" :key="v.name" class="type-row">
-          <span class="type-row-label">{{ v.name }}</span>
+          <span class="type-row-label text-secondary">{{ v.name }}</span>
           <span class="type-row-sample" :class="v.class">Billionhands</span>
         </div>
       </div>
@@ -22,7 +22,7 @@
       <h4 class="type-block-title">Desktop</h4>
       <div class="type-variants type-variants--desktop">
         <div v-for="v in desktopVariants" :key="v.name" class="type-row">
-          <span class="type-row-label">{{ v.name }}</span>
+          <span class="type-row-label text-secondary">{{ v.name }}</span>
           <span class="type-row-sample" :class="v.class">Billionhands</span>
         </div>
       </div>
@@ -72,7 +72,6 @@ const desktopVariants = [
 
 .type-alphabet {
   font-size: 16px;
-  color: var(--bb-neutral-medium);
   margin: 0 0 4px 0;
   letter-spacing: 0.02em;
 }
@@ -108,7 +107,6 @@ const desktopVariants = [
 .type-row-label {
   flex: 0 0 200px;
   font-size: 12px;
-  color: var(--bb-neutral-medium);
 }
 
 .type-row-sample {

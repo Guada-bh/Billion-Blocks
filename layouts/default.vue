@@ -1,63 +1,58 @@
 <template>
-  <div class="ds-layout" :data-theme="theme">
+  <div class="ds-layout" :data-theme="theme" :class="{ 'ds-layout--home': isHome }">
     <header class="ds-header">
-      <button
-        type="button"
-        class="ds-menu-toggle"
-        aria-label="Abrir menú"
-        aria-expanded="sidebarOpen"
-        @click="sidebarOpen = !sidebarOpen"
-      >
-        <span class="ds-menu-toggle-bar" />
-        <span class="ds-menu-toggle-bar" />
-        <span class="ds-menu-toggle-bar" />
-      </button>
-      <NuxtLink to="/" class="ds-logo" @click="sidebarOpen = false">
-        <img :src="logoSrc" alt="" class="ds-logo-isotipo" width="32" height="32" />
-        <span class="ds-logo-text">Billion Blocks</span>
-      </NuxtLink>
-      <button
-        type="button"
-        class="ds-theme-toggle"
-        aria-label="Alternar tema"
-        @click="toggleTheme"
-      >
-        {{ theme === 'dark' ? 'Claro' : 'Oscuro' }}
-      </button>
+      <div class="ds-header-inner">
+        <button
+          v-if="!isHome"
+          type="button"
+          class="ds-menu-toggle"
+          aria-label="Abrir menú"
+          aria-expanded="sidebarOpen"
+          @click="sidebarOpen = !sidebarOpen"
+        >
+          <span class="ds-menu-toggle-bar" />
+          <span class="ds-menu-toggle-bar" />
+          <span class="ds-menu-toggle-bar" />
+        </button>
+        <NuxtLink to="/" class="ds-logo" @click="sidebarOpen = false">
+          <img :src="logoSrc" alt="" class="ds-logo-isotipo" width="32" height="32" />
+          <span class="ds-logo-text">Billion Blocks</span>
+        </NuxtLink>
+        <button type="button" class="ds-theme-toggle" aria-label="Alternar tema" @click="toggleTheme">
+          {{ theme === 'dark' ? 'Claro' : 'Oscuro' }}
+        </button>
+      </div>
     </header>
 
-    <aside class="ds-sidebar" :class="{ 'ds-sidebar--open': sidebarOpen }" aria-label="Navegación del sitio">
-      <nav class="ds-sidebar-nav">
-        <NuxtLink to="/getting-started" class="ds-sidebar-link" @click="sidebarOpen = false">
-          Getting started
-        </NuxtLink>
-        <NuxtLink to="/foundations" class="ds-sidebar-link" @click="sidebarOpen = false">
-          Foundations
-        </NuxtLink>
-        <NuxtLink to="/tokens-theming" class="ds-sidebar-link" @click="sidebarOpen = false">
-          Tokens & Theming
-        </NuxtLink>
-        <NuxtLink to="/components" class="ds-sidebar-link" @click="sidebarOpen = false">
-          Components
-        </NuxtLink>
-        <NuxtLink to="/governance" class="ds-sidebar-link" @click="sidebarOpen = false">
-          Governance
-        </NuxtLink>
-        <NuxtLink to="/changelog" class="ds-sidebar-link" @click="sidebarOpen = false">
-          Changelog
-        </NuxtLink>
-      </nav>
-    </aside>
+    <div class="ds-layout-content">
+      <template v-if="!isHome">
+        <aside class="ds-sidebar" :class="{ 'ds-sidebar--open': sidebarOpen }" aria-label="Navegación del sitio">
+          <nav class="ds-sidebar-nav">
+            <NuxtLink to="/getting-started" class="ds-sidebar-link" @click="sidebarOpen = false">
+              Getting started
+            </NuxtLink>
+            <NuxtLink to="/foundations" class="ds-sidebar-link" @click="sidebarOpen = false">Foundations</NuxtLink>
+            <NuxtLink to="/tokens-theming" class="ds-sidebar-link" @click="sidebarOpen = false">
+              Tokens & Theming
+            </NuxtLink>
+            <NuxtLink to="/components" class="ds-sidebar-link" @click="sidebarOpen = false">Components</NuxtLink>
+            <NuxtLink to="/governance" class="ds-sidebar-link" @click="sidebarOpen = false">Governance</NuxtLink>
+            <NuxtLink to="/changelog" class="ds-sidebar-link" @click="sidebarOpen = false">Changelog</NuxtLink>
+          </nav>
+        </aside>
+        <div v-if="sidebarOpen" class="ds-sidebar-backdrop" aria-hidden="true" @click="sidebarOpen = false" />
+      </template>
 
-    <div v-if="sidebarOpen" class="ds-sidebar-backdrop" aria-hidden="true" @click="sidebarOpen = false" />
-
-    <main class="ds-main">
-      <slot />
-    </main>
+      <main class="ds-main">
+        <slot />
+      </main>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+const route = useRoute()
+const isHome = computed(() => route.path === '/')
 const theme = ref<'dark' | 'light'>('dark')
 const sidebarOpen = ref(false)
 const logoSrc = '/isotipo-bh.svg'
@@ -78,23 +73,40 @@ watch(theme, (v) => {
 <style scoped>
 .ds-layout {
   min-height: 100vh;
+  width: 100%;
   background: var(--bb-background-default);
   color: var(--bb-text-color-primary);
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.ds-layout-content {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .ds-header {
   position: sticky;
   top: 0;
   z-index: 20;
+  width: 100%;
+  background: var(--bb-neutral-soft);
+  border-bottom: 1px solid var(--bb-neutral-base);
+}
+
+.ds-header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
   display: flex;
   align-items: center;
   gap: var(--bb-space-16);
   padding: var(--bb-space-16) var(--bb-space-24);
-  width: 100%;
-  background: var(--bb-neutral-soft);
-  border-bottom: 1px solid var(--bb-neutral-base);
 }
 
 .ds-menu-toggle {
@@ -151,7 +163,9 @@ watch(theme, (v) => {
   border: none;
   border-radius: var(--bb-button-border-radius);
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 .ds-theme-toggle:hover {
   background: var(--bb-neutral-default);
@@ -182,7 +196,9 @@ watch(theme, (v) => {
   color: var(--bb-neutral-strong);
   text-decoration: none;
   border-radius: 6px;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 .ds-sidebar-link:hover {
   background: var(--bb-neutral-base);
@@ -201,8 +217,11 @@ watch(theme, (v) => {
 .ds-main {
   flex: 1;
   min-width: 0;
-  padding: var(--bb-space-40) var(--bb-space-24) var(--bb-space-80);
   max-width: 900px;
+}
+
+.ds-layout--home .ds-main {
+  max-width: none;
 }
 
 /* Responsive: hamburger + drawer */

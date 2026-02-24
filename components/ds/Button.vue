@@ -5,11 +5,7 @@
     :href="tag === 'a' ? href : undefined"
     :disabled="disabled"
     class="ds-button"
-    :class="[
-      `ds-button--${variant}`,
-      `ds-button--${size}`,
-      { 'ds-button--icon-only': iconOnly }
-    ]"
+    :class="[`ds-button--${variant}`, `ds-button--${size}`, { 'ds-button--icon-only': iconOnly }]"
     @click="onClick"
   >
     <span v-if="$slots.iconLeft || iconLeft" class="ds-button-icon ds-button-icon--left">
@@ -72,7 +68,11 @@ function onClick(ev: MouseEvent) {
   cursor: pointer;
   padding: var(--bb-button-padding-y) var(--bb-button-padding-x);
   text-decoration: none;
-  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .ds-button:focus {
@@ -80,7 +80,9 @@ function onClick(ev: MouseEvent) {
 }
 
 .ds-button:focus-visible {
-  box-shadow: 0 0 0 2px var(--bb-background-default), 0 0 0 4px var(--bb-info-default);
+  box-shadow:
+    0 0 0 2px var(--bb-background-default),
+    0 0 0 4px var(--bb-info-default);
 }
 
 .ds-button--sm {
